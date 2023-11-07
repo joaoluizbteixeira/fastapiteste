@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Data Maçônica</title>
+    <style>
+        /* Estilos básicos para a página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consulta de Data Maçônica</h1>
+    <label for="dataInput">Insira uma data (DD-MM-AAAA): </label>
+    <input type="text" id="dataInput" placeholder="Ex: 21-03-2023">
+    <button onclick="consultarData()">Consultar</button>
+    <div id="mensagem"></div>
+
+    <script>
+        function consultarData() {
+            const data = document.getElementById('dataInput').value;
+            fetch(`http://127.0.0.1:8080/teste/${data}`)
+                .then(response => response.json())
+                .then(data => {
+                    const mensagemDiv = document.getElementById('mensagem');
+                    mensagemDiv.innerText = `Mensagem: ${data.mensagem}`;
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+    </script>
+</body>
+</html>
