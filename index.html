@@ -21,7 +21,7 @@
     <script>
         function consultarData() {
             const data = document.getElementById('dataInput').value;
-            fetch(`http://127.0.0.1:8080/teste/${data}`)
+            fetch(`https://joaoluizbteixeira.github.io/fastapiteste/${data}`)
                 .then(response => response.json())
                 .then(data => {
                     const mensagemDiv = document.getElementById('mensagem');
