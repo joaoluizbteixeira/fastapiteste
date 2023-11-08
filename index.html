@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <title>Consulta de Data Maçônica</title>
     <style>
-        /* Estilos básicos para a página */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #mensagem {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Consulta de Data Maçônica</h1>
-    <label for="dataInput">Insira uma data (DD-MM-AAAA): </label>
-    <input type="text" id="dataInput" placeholder="Ex: 21-03-2023">
-    <button onclick="consultarData()">Consultar</button>
-    <div id="mensagem"></div>
+    <div class="container">
+        <h1>Consulta de Data Maçônica</h1>
+        <label for="dataInput">Insira uma data (DD-MM-AAAA):</label>
+        <input type="text" id="dataInput" placeholder="Ex: 21-03-2023">
+        <button onclick="consultarData()">Consultar</button>
+        <div id="mensagem"></div>
+    </div>
 
     <script>
         function consultarData() {
